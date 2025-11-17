@@ -11,3 +11,48 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+    <!-- Debugging overlay: show runtime client errors on the page (temporary) -->
+    <script>
+      (function(){
+        function showError(msg){
+          try{
+            var el = document.getElementById('client-error-overlay');
+            if(!el){
+              el = document.createElement('div');
+              el.id = 'client-error-overlay';
+              Object.assign(el.style,{
+                position: 'fixed',
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(0,0,0,0.85)',
+                color: '#fff',
+                padding: '18px',
+                zIndex: 2147483647,
+                overflow: 'auto',
+                fontFamily: 'Menlo, Monaco, Consolas, monospace',
+                fontSize: '13px',
+                lineHeight: '1.4'
+              });
+              document.body.appendChild(el);
+            }
+            el.textContent = 'Client runtime error:\n' + msg;
+          }catch(e){
+            // ignore overlay errors
+            console.error('overlay error', e);
+          }
+        }
+        window.addEventListener('error', function(e){
+          try{ showError((e && e.message) || String(e)); }catch{};
+        });
+        window.addEventListener('unhandledrejection', function(e){
+          try{ showError('UnhandledRejection: ' + (e && e.reason && e.reason.message || e && e.reason || '')); }catch{};
+        });
+        window.onerror = function(msg, url, line, col, err){
+          try{ showError(msg + '\n' + (url||'') + ':' + (line||'') + ':' + (col||'') + (err && err.stack ? '\n' + err.stack : '')); }catch{};
+        };
+        // expose for manual testing
+        window.__showClientError = showError;
+      })();
+    </script>
