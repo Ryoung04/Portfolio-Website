@@ -26,24 +26,54 @@ export default function Projects() {
   ];
 
   const [selected, setSelected] = useState(null);
+  const modalRef = useRef(null);
+  const lastFocusedRef = useRef(null);
 
   function openProject(p) {
+    lastFocusedRef.current = document.activeElement;
     setSelected(p);
+    // hide main content from screen readers
+    const main = document.getElementById('main-content');
+    if (main) main.setAttribute('aria-hidden', 'true');
   }
 
   function closeProject() {
     setSelected(null);
+    const main = document.getElementById('main-content');
+    if (main) main.removeAttribute('aria-hidden');
+    // return focus to opener
+    setTimeout(() => lastFocusedRef.current?.focus(), 0);
   }
 
-  // close modal on Escape
+  // close modal on Escape and trap Tab inside modal
   useEffect(() => {
     function onKey(e) {
       if (e.key === 'Escape') closeProject();
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      }
     }
     if (selected) {
       document.addEventListener('keydown', onKey);
+      // focus close button in modal
+      setTimeout(() => modalRef.current?.querySelector('button')?.focus(), 0);
+      document.body.style.overflow = 'hidden';
     }
-    return () => document.removeEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
   }, [selected]);
 
   return (
@@ -54,14 +84,14 @@ export default function Projects() {
         {projects.map((p) => (
           <article
             key={p.name}
-            className="bg-gradient-to-b from-gray-900/80 to-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition cursor-pointer"
+            className="bg-gradient-to-b from-gray-900/80 to-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition cursor-pointer reveal-child"
             onClick={() => openProject(p)}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => (e.key === 'Enter' ? openProject(p) : null)}
           >
             <div className="h-36 mb-4 rounded-md overflow-hidden bg-gray-800 flex items-center justify-center">
-              <img src={p.img} alt={p.name} className="h-20 w-auto" />
+              <img src={p.img} alt={p.name} className="h-20 w-auto" loading="lazy" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-white">{p.name}</h3>
             <p className="text-gray-400 mb-2">{p.description}</p>
@@ -84,9 +114,10 @@ export default function Projects() {
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/60" onClick={closeProject} />
           <div
+            ref={modalRef}
             role="dialog"
             aria-modal="true"
-            className="relative bg-gray-900 rounded-lg max-w-3xl w-full p-6 z-10"
+            className="relative bg-gray-900 rounded-lg max-w-3xl w-full p-6 z-10 modal"
           >
             <button
               className="absolute top-4 right-4 text-gray-300"
@@ -98,7 +129,7 @@ export default function Projects() {
 
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full md:w-1/3 flex items-center justify-center bg-gray-800 rounded-md p-4">
-                <img src={selected.img} alt={selected.name} className="h-32 w-auto" />
+                <img src={selected.img} alt={selected.name} className="h-32 w-auto" loading="lazy" />
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2">{selected.name}</h3>

@@ -15,8 +15,13 @@ function setupRevealObserver() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+            entry.target.classList.add('visible');
+            // stagger reveal for children with .reveal-child
+            const children = entry.target.querySelectorAll('.reveal-child');
+            children.forEach((child, i) => {
+              setTimeout(() => child.classList.add('visible'), i * 80 + 60);
+            });
+            observer.unobserve(entry.target);
         }
       });
     },

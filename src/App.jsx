@@ -11,11 +11,15 @@ export default function App() {
   return (
     <div className="bg-gray-900 text-white scroll-smooth">
       <NavBar />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+
       <Footer />
     </div>
   );

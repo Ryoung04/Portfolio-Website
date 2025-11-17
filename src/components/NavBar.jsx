@@ -37,12 +37,27 @@ export default function NavBar() {
       }, 0);
       // prevent body scroll
       document.body.style.overflow = 'hidden';
+      // hide main content from screen readers
+      const main = document.getElementById('main-content');
+      if (main) main.setAttribute('aria-hidden', 'true');
     }
 
     return () => {
       document.removeEventListener('keydown', onKeyDown);
       document.body.style.overflow = '';
+      const main = document.getElementById('main-content');
+      if (main) main.removeAttribute('aria-hidden');
     };
+  }, [open]);
+
+  // keep reference to the toggle so we can return focus when closing
+  const toggleRef = useRef(null);
+
+  // return focus when menu closes
+  useEffect(() => {
+    if (!open) {
+      setTimeout(() => toggleRef.current?.focus(), 0);
+    }
   }, [open]);
 
   return (
@@ -58,6 +73,7 @@ export default function NavBar() {
         </div>
 
         <button
+          ref={toggleRef}
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -103,4 +119,14 @@ export default function NavBar() {
       </div>
     </nav>
   );
+}
+
+// return focus to toggle when menu closes
+function useReturnFocus(toggleRef, open) {
+  useEffect(() => {
+    if (!open) {
+      // microtask to ensure DOM is ready
+      setTimeout(() => toggleRef.current?.focus(), 0);
+    }
+  }, [open]);
 }
