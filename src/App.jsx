@@ -9,7 +9,7 @@ import Footer from "./components/Footer.jsx";
 
 export default function App() {
   return (
-    <div className="bg-gray-900 text-white scroll-smooth">
+    <div className="bg-white text-gray-900 antialiased scroll-smooth">
       <NavBar />
 
       <main id="main-content">

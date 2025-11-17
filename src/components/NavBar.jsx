@@ -61,33 +61,39 @@ export default function NavBar() {
   }, [open]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-sm z-50 border-b border-gray-800">
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="#" className="text-lg font-semibold text-white">Reise Young</a>
-
-        <div className="hidden md:flex items-center space-x-6 text-sm text-gray-300">
-          <a href="#about" className="hover:text-white transition">About</a>
-          <a href="#projects" className="hover:text-white transition">Projects</a>
-          <a href="#skills" className="hover:text-white transition">Skills</a>
-          <a href="#contact" className="hover:text-white transition">Contact</a>
+    <nav className="w-full bg-white border-b">
+      <div className="max-w-6xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+        <div className="col-span-1">
+          <a href="#" className="text-lg font-semibold text-gray-900">Reise Young</a>
         </div>
 
-        <button
-          ref={toggleRef}
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 rounded text-gray-300 hover:bg-gray-800/50"
-        >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d={open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-            />
-          </svg>
-        </button>
+        <div className="col-span-1 flex items-center justify-center">
+          <div className="hidden lg:flex items-center space-x-8 text-sm text-gray-700">
+            <a href="#about" className="hover:text-black transition">About</a>
+            <a href="#projects" className="hover:text-black transition">Projects</a>
+            <a href="#skills" className="hover:text-black transition">Skills</a>
+            <a href="#contact" className="hover:text-black transition">Contact</a>
+          </div>
+        </div>
+
+        <div className="col-span-1 flex justify-end">
+          <button
+            ref={toggleRef}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="lg:hidden p-2 rounded text-gray-700 hover:bg-gray-100"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d={open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile slide-out menu (role=dialog for accessibility) */}

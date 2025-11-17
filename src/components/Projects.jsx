@@ -84,7 +84,7 @@ export default function Projects() {
         {projects.map((p) => (
           <article
             key={p.name}
-            className="bg-gradient-to-b from-gray-900/80 to-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition cursor-pointer reveal-child"
+            className="bg-white p-6 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition cursor-pointer reveal-child"
             onClick={() => openProject(p)}
             role="button"
             tabIndex={0}
@@ -94,8 +94,8 @@ export default function Projects() {
               <img src={p.img} alt={p.name} className="h-20 w-auto" loading="lazy" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-white">{p.name}</h3>
-            <p className="text-gray-400 mb-2">{p.description}</p>
-            <p className="text-sm text-blue-400 mb-4">{p.tech}</p>
+            <p className="text-gray-700 mb-2">{p.description}</p>
+            <p className="text-sm text-gray-500 mb-4">{p.tech}</p>
             <a
               href={p.link}
               target="_blank"
