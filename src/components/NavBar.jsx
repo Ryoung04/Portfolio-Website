@@ -1,7 +1,49 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const panelRef = useRef(null);
+  const firstLinkRef = useRef(null);
+
+  // Close on Escape and trap focus when open
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+      if (e.key === 'Tab' && open && panelRef.current) {
+        const focusable = panelRef.current.querySelectorAll(
+          'a, button, input, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      }
+    }
+
+    if (open) {
+      document.addEventListener('keydown', onKeyDown);
+      // focus the first link in the panel when it opens
+      setTimeout(() => {
+        firstLinkRef.current?.focus();
+      }, 0);
+      // prevent body scroll
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-sm z-50 border-b border-gray-800">
@@ -17,6 +59,7 @@ export default function NavBar() {
 
         <button
           aria-label="Toggle menu"
+          aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="md:hidden p-2 rounded text-gray-300 hover:bg-gray-800/50"
         >
@@ -31,8 +74,12 @@ export default function NavBar() {
         </button>
       </div>
 
-      {/* Mobile slide-out menu */}
+      {/* Mobile slide-out menu (role=dialog for accessibility) */}
       <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal={open}
+        aria-hidden={!open}
         className={`md:hidden fixed top-0 right-0 h-full w-64 bg-gray-900/95 backdrop-blur-sm shadow-lg transform transition-transform duration-300 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
@@ -47,7 +94,7 @@ export default function NavBar() {
           </button>
 
           <nav className="flex flex-col gap-4 text-lg">
-            <a href="#about" onClick={() => setOpen(false)} className="text-gray-200 hover:text-white">About</a>
+            <a ref={firstLinkRef} href="#about" onClick={() => setOpen(false)} className="text-gray-200 hover:text-white">About</a>
             <a href="#projects" onClick={() => setOpen(false)} className="text-gray-200 hover:text-white">Projects</a>
             <a href="#skills" onClick={() => setOpen(false)} className="text-gray-200 hover:text-white">Skills</a>
             <a href="#contact" onClick={() => setOpen(false)} className="text-gray-200 hover:text-white">Contact</a>

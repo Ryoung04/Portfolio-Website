@@ -9,20 +9,31 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 
-// Simple section reveal on load (adds 'visible' to elements with .reveal)
-function revealSections() {
+// IntersectionObserver-based reveal for sections (better performance)
+function setupRevealObserver() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: '0px', threshold: 0.08 }
+  );
+
   const sections = Array.from(document.querySelectorAll('section'));
-  sections.forEach((el, i) => {
+  sections.forEach((el) => {
     el.classList.add('reveal');
-    // staggered reveal
-    window.requestAnimationFrame(() => {
-      setTimeout(() => el.classList.add('visible'), i * 80 + 120);
-    });
+    observer.observe(el);
   });
 }
 
-if (document.readyState === 'loading') {
-  window.addEventListener('DOMContentLoaded', revealSections);
-} else {
-  revealSections();
+if (typeof window !== 'undefined') {
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', setupRevealObserver);
+  } else {
+    setupRevealObserver();
+  }
 }
