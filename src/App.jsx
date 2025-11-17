@@ -10,7 +10,7 @@ import Footer from "./components/Footer.jsx";
 export default function App() {
   return (
     <div className="bg-gray-900 text-white scroll-smooth">
-      <Navbar />
+      <NavBar />
       <Hero />
       <About />
       <Projects />
