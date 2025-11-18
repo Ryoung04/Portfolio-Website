@@ -13,22 +13,15 @@ export default function NavBar() {
   }
 
   return (
-    <nav className="w-full bg-white border-b">
-      <div className="max-w-6xl mx-auto px-6 py-6 flex items-center">
-        <div className="flex-shrink-0">
-          <Link to="/" className="text-xl font-bold text-gray-900 tracking-tight">Reise Young</Link>
-        </div>
+    <nav className="site-nav">
+      <div className="nav-container">
+        <Link to="/" className="site-title">Reise Young</Link>
 
-        {/* Centered nav region that stretches and spaces links evenly */}
-        <div className="flex-1">
-          <div className="w-full">
-            <nav className="flex w-full max-w-6xl mx-auto justify-between px-4">
-              <Link to="/about" className={linkClass("/about")} aria-current={path === "/about" ? "page" : undefined}>About Me</Link>
-              <Link to="/projects" className={linkClass("/projects")} aria-current={path === "/projects" ? "page" : undefined}>Projects</Link>
-              <Link to="/skills" className={linkClass("/skills")} aria-current={path === "/skills" ? "page" : undefined}>Skills</Link>
-              <Link to="/contact" className={linkClass("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Contact</Link>
-            </nav>
-          </div>
+        <div className="nav-links" role="navigation" aria-label="Primary">
+          <Link to="/about" className={linkClass("/about")} aria-current={path === "/about" ? "page" : undefined}>About Me</Link>
+          <Link to="/projects" className={linkClass("/projects")} aria-current={path === "/projects" ? "page" : undefined}>Projects</Link>
+          <Link to="/skills" className={linkClass("/skills")} aria-current={path === "/skills" ? "page" : undefined}>Skills</Link>
+          <Link to="/contact" className={linkClass("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Contact</Link>
         </div>
       </div>
     </nav>
