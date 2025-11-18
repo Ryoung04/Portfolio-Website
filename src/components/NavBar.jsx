@@ -23,6 +23,11 @@ export default function NavBar() {
           <Link to="/skills" className={linkClass("/skills")} aria-current={path === "/skills" ? "page" : undefined}>Skills</Link>
           <Link to="/contact" className={linkClass("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Contact</Link>
         </div>
+        
+        {/* Resume button: opens resume in a new tab so users can preview or download */}
+        <div className="ml-6">
+          <a href="/assets/Reise_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn primary">Resume</a>
+        </div>
       </div>
     </nav>
   );

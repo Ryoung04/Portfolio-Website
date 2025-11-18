@@ -11,7 +11,6 @@ export default function ContactPage() {
         <p className="text-sm">Email: <a href="mailto:reiseyoung@gmail.com" className="text-black underline">reiseyoung@gmail.com</a></p>
         <p className="text-sm">LinkedIn: <a href="https://www.linkedin.com/in/reise-young" target="_blank" rel="noopener noreferrer" className="text-black underline">www.linkedin.com/in/reise-young</a></p>
         <p className="text-sm">GitHub: <a href="https://github.com/Ryoung04" target="_blank" rel="noopener noreferrer" className="text-black underline">github.com/Ryoung04</a></p>
-        <p className="text-sm">Resume: <a href="/assets/Reise_Resume.pdf" download className="text-black underline">Download Resume (PDF)</a></p>
       </div>
 
       <p className="mt-6 text-sm text-gray-500">If you'd like, I can add a contact form that emails you directly or integrate with Netlify / Formspree.</p>
