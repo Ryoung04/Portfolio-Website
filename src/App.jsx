@@ -2,6 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
+import Hero from "./components/Hero.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
 import SkillsPage from "./pages/SkillsPage.jsx";
@@ -14,7 +15,7 @@ export default function App() {
         <NavBar />
         <main id="main-content">
           <Routes>
-            <Route path="/" element={<AboutPage />} />
+            <Route path="/" element={<Hero />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/skills" element={<SkillsPage />} />
