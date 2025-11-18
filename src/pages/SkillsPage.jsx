@@ -13,7 +13,7 @@ export default function SkillsPage() {
 
         <div>
           <h3 className="font-semibold mb-2">Frameworks & Libraries</h3>
-          <p className="text-gray-700">React, Node, Qt</p>
+          <p className="text-gray-700">React, Node, Qt, Vercel</p>
         </div>
 
         <div>
