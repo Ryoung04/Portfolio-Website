@@ -6,9 +6,10 @@ export default function NavBar() {
   const path = loc.pathname || "/";
 
   function linkClass(to) {
-    const base = "transition text-base font-medium";
+    const base = "transition text-base font-medium no-underline visited:text-black";
     const active = path === to || (to === "/" && path === "/");
-    return `${base} ${active ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`;
+    // Use black for both active and inactive; active becomes bolder
+    return `${base} ${active ? "text-black font-semibold" : "text-black/80 hover:text-black"}`;
   }
 
   return (
@@ -20,8 +21,8 @@ export default function NavBar() {
 
         {/* Centered nav region that stretches and spaces links evenly */}
         <div className="flex-1">
-          <div className="mx-auto w-full max-w-3xl">
-            <nav className="flex justify-between">
+          <div className="w-full">
+            <nav className="flex w-full max-w-6xl mx-auto justify-between px-4">
               <Link to="/about" className={linkClass("/about")} aria-current={path === "/about" ? "page" : undefined}>About Me</Link>
               <Link to="/projects" className={linkClass("/projects")} aria-current={path === "/projects" ? "page" : undefined}>Projects</Link>
               <Link to="/skills" className={linkClass("/skills")} aria-current={path === "/skills" ? "page" : undefined}>Skills</Link>
