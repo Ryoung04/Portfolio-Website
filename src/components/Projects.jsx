@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
 export default function Projects() {
   const projects = [
@@ -32,7 +32,6 @@ export default function Projects() {
   function openProject(p) {
     lastFocusedRef.current = document.activeElement;
     setSelected(p);
-    // hide main content from screen readers
     const main = document.getElementById('main-content');
     if (main) main.setAttribute('aria-hidden', 'true');
   }
@@ -41,14 +40,15 @@ export default function Projects() {
     setSelected(null);
     const main = document.getElementById('main-content');
     if (main) main.removeAttribute('aria-hidden');
-    // return focus to opener
     setTimeout(() => lastFocusedRef.current?.focus(), 0);
   }
 
-  // close modal on Escape and trap Tab inside modal
   useEffect(() => {
     function onKey(e) {
-      if (e.key === 'Escape') closeProject();
+      if (e.key === 'Escape') {
+        closeProject();
+        return;
+      }
       if (e.key === 'Tab' && modalRef.current) {
         const focusable = modalRef.current.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
         if (focusable.length === 0) return;
@@ -66,7 +66,6 @@ export default function Projects() {
     }
     if (selected) {
       document.addEventListener('keydown', onKey);
-      // focus close button in modal
       setTimeout(() => modalRef.current?.querySelector('button')?.focus(), 0);
       document.body.style.overflow = 'hidden';
     }
@@ -79,7 +78,6 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <h2 className="text-4xl font-bold text-center mb-8">Projects</h2>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {projects.map((p) => (
           <article
@@ -108,8 +106,6 @@ export default function Projects() {
           </article>
         ))}
       </div>
-
-      {/* Project modal */}
       {selected && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/60" onClick={closeProject} />
@@ -126,7 +122,6 @@ export default function Projects() {
             >
               ✕
             </button>
-
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full md:w-1/3 flex items-center justify-center bg-gray-800 rounded-md p-4">
                 <img src={selected.img} alt={selected.name} className="h-32 w-auto" loading="lazy" />
@@ -144,4 +139,7 @@ export default function Projects() {
     </section>
   );
 }
+
+
+
 
