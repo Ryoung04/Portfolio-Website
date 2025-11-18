@@ -41,12 +41,13 @@ a:hover {
   font-weight: 700;
   font-size: 1.125rem;
   text-decoration: none;
+  margin-right: 2.5rem; /* extra spacing between name and first link */
 }
 .site-nav .nav-links {
   display: flex;
   flex: 1 1 auto;
-  max-width: 900px;
-  margin-left: 2rem;
+  max-width: 720px;
+  margin-left: auto;
   justify-content: space-between;
   align-items: center;
 }
