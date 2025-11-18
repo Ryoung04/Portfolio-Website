@@ -31,8 +31,9 @@ a:hover {
 .site-nav .nav-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.25rem 1rem;
-  display: flex;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 1rem;
 }
@@ -41,23 +42,43 @@ a:hover {
   font-weight: 700;
   font-size: 1.125rem;
   text-decoration: none;
-  margin-right: 2.5rem; /* extra spacing between name and first link */
+  /* left column; keep no forced large margin so center can space evenly */
 }
 .site-nav .nav-links {
   display: flex;
-  flex: 1 1 auto;
-  max-width: 720px;
-  margin-left: auto;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-evenly; /* distribute links evenly in center column */
   align-items: center;
+  gap: 1.5rem;
+  /* prevent links from wrapping onto multiple lines; allow horizontal scroll on very small screens */
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .site-nav .nav-links a {
   color: #0f172a; /* black-ish */
   text-decoration: none;
   font-weight: 500;
+  padding: 0.25rem 0.5rem;
 }
 .site-nav .nav-links a:hover {
   color: #000000;
+}
+
+/* Responsive adjustments: shrink gaps and font sizes on narrower screens so layout stays on one row */
+@media (max-width: 900px) {
+  .site-nav .nav-links { gap: 1rem; }
+  .site-nav .nav-links a { font-size: 0.95rem; }
+  .site-nav .site-title { font-size: 1.05rem; }
+}
+
+@media (max-width: 640px) {
+  .site-nav .nav-container { padding: 0.75rem 0.75rem; }
+  .site-nav .nav-links { gap: 0.75rem; }
+  .site-nav .nav-links a { font-size: 0.92rem; padding: 0.125rem 0.4rem; }
+  .site-nav .ml-6 { margin-left: 0.5rem; }
+  /* keep resume button small on narrow screens */
+  .site-nav .btn.primary { padding: 0.45rem 0.65rem; font-size: 0.9rem; }
 }
 
 /* Active link indicator: small bar under the active nav item */
