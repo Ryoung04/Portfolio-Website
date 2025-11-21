@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Smooth in-page scrolling for anchor navigation */
+html { scroll-behavior: smooth; }
+
 a {
   font-weight: 500;
   color: #2563eb; /* blue-600 */
