@@ -7,7 +7,6 @@ import AboutPage from "./pages/AboutPage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
 import SkillsPage from "./pages/SkillsPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
-import Footer from "./components/Footer.jsx";
 
 export default function App() {
   return (
@@ -23,7 +22,6 @@ export default function App() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </Router>
   );

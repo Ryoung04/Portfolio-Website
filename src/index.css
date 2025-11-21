@@ -123,9 +123,8 @@ a:hover {
   /* Use the blurred background image uploaded to GitHub (public/assets/bluredBackground.jpeg) */
   background-image: url('/assets/bluredBackground.jpeg');
   background-size: cover;
-  /* soften the blur so the background is still visible but more subtle */
   background-position: center right;
-  filter: blur(6px) brightness(0.28) grayscale(0.06);
+  filter: blur(12px) brightness(0.25) grayscale(0.1);
   transform: scale(1.06);
   z-index: 0;
 }
@@ -155,11 +154,6 @@ a:hover {
 .btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; }
 .btn.primary { background:#0f172a; color:#fff; }
 .btn.ghost { background:transparent; color:#0f172a; border:1px solid rgba(15,23,42,0.08); }
-
-/* CTA layout adjustments: keep primary left, center the Contact button below */
-.hero-ctas { display:block; }
-.cta-row { display:flex; gap:0.75rem; }
-.center-cta { width:100%; display:flex; justify-content:center; margin-top:0.75rem; }
 
 /* About page photo layout */
 .about-grid {
