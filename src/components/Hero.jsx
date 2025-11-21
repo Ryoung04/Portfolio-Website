@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -30,12 +31,10 @@ export default function Hero() {
     {/* Features / boxes section below the hero content to add verticality (separate section) */}
     <section className="features-section" aria-label="Highlights">
       <div className="hero-features-inner">
-        <div className="hero-box">Experience</div>
-        <div className="hero-box">Projects</div>
-        <div className="hero-box">Skills</div>
-        <div className="hero-box">Research</div>
-        <div className="hero-box">Leadership</div>
-        <div className="hero-box">Contact</div>
+        <Link to="/about" className="hero-box" aria-label="About Me">About Me</Link>
+        <Link to="/projects" className="hero-box" aria-label="Projects">Projects</Link>
+        <Link to="/skills" className="hero-box" aria-label="Skills">Skills</Link>
+        <Link to="/contact" className="hero-box" aria-label="Contact">Contact</Link>
       </div>
     </section>
     </>
