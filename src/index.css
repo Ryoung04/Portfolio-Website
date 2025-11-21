@@ -249,3 +249,15 @@ button:focus-visible {
   .submit-title { font-size: 2rem; }
   .submit-section { padding: 4rem 6vw; }
 }
+
+/* Accessibility + form visual helpers */
+.error-text { color: #ffe6e6; background: rgba(255,0,0,0.06); padding: 0.45rem 0.6rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.95rem; }
+.success-text { color: #e6fff1; background: rgba(0,200,120,0.06); padding: 0.45rem 0.6rem; border-radius: 6px; margin-top: 0.5rem; }
+.hint-text { color: rgba(255,255,255,0.72); margin-top: 0.5rem; font-size: 0.95rem; }
+.form-status { margin-top: 1rem; }
+
+/* Make focus outlines very visible for keyboard users */
+input:focus, textarea:focus, button:focus {
+  outline: 3px solid rgba(99,102,241,0.18);
+  outline-offset: 2px;
+}
