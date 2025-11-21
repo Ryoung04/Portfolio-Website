@@ -22,40 +22,6 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="hero">
-        <div className="hero-inner">
-          <div className="hero-left">
-            <div className="hero-card">
-              <h1 className="hero-title">Hi, I’m Reise Young</h1>
-
-              <p className="hero-sub">
-                Computer Science student at UC Irvine — I build full-stack apps, explore AI, and care about secure,
-                maintainable software.
-              </p>
-
-              <div className="hero-ctas">
-                <a href="/projects" className="btn primary">View Projects</a>
-                <button onClick={scrollToContact} className="btn ghost">Contact Me</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-right" aria-hidden="true">
-            <img src="/assets/Reise_Mug.jpeg" alt="Reise Young" className="illustration-img profile-photo-hero" />
-          </div>
-        </div>
-      </section>
-
-      {/* Features / boxes section below the hero content to add verticality (separate section) */}
-      <section className="features-section" aria-label="Highlights">
-        <div className="hero-features-inner">
-          <Link to="/about" className="hero-box" aria-label="About Me">About Me</Link>
-          <Link to="/projects" className="hero-box" aria-label="Projects">Projects</Link>
-          <Link to="/skills" className="hero-box" aria-label="Skills">Skills</Link>
-          <Link to="/contact" className="hero-box" aria-label="Contact">Contact</Link>
-        </div>
-      </section>
-
       {/* Submit a message section (anchored for smooth scroll) */}
       <section id="submit-message" className="submit-section" aria-label="Submit a message">
         <div className="submit-inner">
@@ -93,6 +59,42 @@ export default function Hero() {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* Features / boxes section below the hero content to add verticality (separate section) */}
+      <section className="features-section" aria-label="Highlights">
+        <div className="hero-features-inner">
+          <Link to="/about" className="hero-box" aria-label="About Me">About Me</Link>
+          <Link to="/projects" className="hero-box" aria-label="Projects">Projects</Link>
+          <Link to="/skills" className="hero-box" aria-label="Skills">Skills</Link>
+          <Link to="/contact" className="hero-box" aria-label="Contact">Contact</Link>
+          <Link to="/about#experience" className="hero-box" aria-label="Experience">Experience</Link>
+          <Link to="/projects#research" className="hero-box" aria-label="Research">Research</Link>
+        </div>
+      </section>
+
+      <section id="home" className="hero">
+        <div className="hero-inner">
+          <div className="hero-left">
+            <div className="hero-card">
+              <h1 className="hero-title">Hi, I’m Reise Young</h1>
+
+              <p className="hero-sub">
+                Computer Science student at UC Irvine — I build full-stack apps, explore AI, and care about secure,
+                maintainable software.
+              </p>
+
+              <div className="hero-ctas">
+                <a href="/projects" className="btn primary">View Projects</a>
+                <button onClick={scrollToContact} className="btn ghost">Contact Me</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-right" aria-hidden="true">
+            <img src="/assets/Reise_Mug.jpeg" alt="Reise Young" className="illustration-img profile-photo-hero" />
+          </div>
         </div>
       </section>
     </>
