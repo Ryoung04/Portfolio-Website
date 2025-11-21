@@ -193,7 +193,15 @@ function FormSpreeContact() {
         </div>
 
         <div style={{ marginTop: '1rem' }}>
-          <button type="submit" className="btn primary" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send Message'}</button>
+          <button
+            type="submit"
+            className="btn primary"
+            disabled={true}
+            aria-disabled="true"
+            title="Send disabled — feature WIP"
+          >
+            Send Message (WIP)
+          </button>
         </div>
       </form>
 
