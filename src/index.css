@@ -111,6 +111,28 @@ a:hover {
 .btn.primary { background:#0f172a; color:#fff; }
 .btn.ghost { background:transparent; color:#0f172a; border:1px solid rgba(15,23,42,0.08); }
 
+/* About page photo layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+}
+.about-photo { display:flex; justify-content:center; }
+.profile-photo {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 9999px;
+  box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+  border: 4px solid #fff;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .profile-photo { width: 180px; height: 180px; margin: 0 auto; }
+}
+
 
 
 body {
