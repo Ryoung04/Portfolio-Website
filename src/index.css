@@ -266,15 +266,17 @@ input:focus, textarea:focus, button:focus {
 
 
 /* Features grid below hero: responsive, equal-sized boxes with consistent spacing */
-.features-section { position: relative; z-index: 2; padding: 7rem 8vw; background: #ffffff; }
+.features-section { position: relative; z-index: 2; padding: 7rem 8vw; background: #f7f8fb; }
 .hero-features-inner {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  column-gap: clamp(1.5rem, 4vw, 3.5rem);
-  row-gap: clamp(1.5rem, 4vw, 3.5rem);
+  /* fixed gap so spacing remains identical when resizing */
+  column-gap: 2.5rem;
+  row-gap: 2.5rem;
+  gap: 2.5rem;
   align-items: stretch;
   justify-content: center;
   align-content: start;
@@ -293,7 +295,8 @@ input:focus, textarea:focus, button:focus {
   text-align:center;
   padding:1.25rem;
   border-radius:14px;
-  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+  /* tighten shadow so it doesn't visually bridge cards */
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
   border: 1px solid rgba(2,6,23,0.04);
   transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, background-color 220ms, color 220ms;
 }
