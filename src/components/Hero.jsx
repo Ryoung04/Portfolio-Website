@@ -59,9 +59,9 @@ export default function Hero() {
       </section>
 
       {/* Submit a message section (anchored for smooth scroll) */}
-      <section id="submit-message" className="submit-section" aria-label="Submit a message">
+      <section id="submit-message" className="submit-section" aria-label="Send a message (WIP)">
         <div className="submit-inner">
-          <h2 className="submit-title">SUBMIT A MESSAGE</h2>
+          <h2 className="submit-title">SEND A MESSAGE (WIP)</h2>
 
           <div className="submit-left">
             {/* Accessible form with client-side validation and Formspree wiring (configure VITE_FORMSPREE_ENDPOINT) */}
