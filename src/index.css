@@ -352,3 +352,19 @@ input:focus, textarea:focus, button:focus {
   .page-bg { padding-bottom: 4rem; }
 }
 
+/* Two-column layout for page content: left text, right images/visuals */
+.page-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.75rem;
+  align-items: start;
+}
+.page-content .page-text { grid-column: 1 / 2; }
+.page-content .page-side { grid-column: 2 / 3; display:flex; align-items:flex-start; justify-content:center; }
+
+@media (max-width: 900px) {
+  .page-content { grid-template-columns: 1fr; gap: 1.25rem; }
+  .page-content .page-text { grid-column: 1 / -1; }
+  .page-content .page-side { grid-column: 1 / -1; }
+}
+
