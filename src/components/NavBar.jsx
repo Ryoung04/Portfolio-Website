@@ -1,33 +1,16 @@
 
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function NavBar() {
   const loc = useLocation();
-  const navigate = useNavigate();
   const path = loc.pathname || "/";
 
-  function linkClass(id) {
+  function linkClass(to) {
     const base = "transition text-base font-medium no-underline visited:text-black";
-    const active = (loc.pathname === "/" && loc.hash === `#${id}`) || (loc.pathname === `/${id}`);
+    const active = path === to || (to === "/" && path === "/");
+    // Use black for both active and inactive; active becomes bolder
     return `${base} ${active ? "text-black font-semibold" : "text-black/80 hover:text-black"}`;
   }
-
-  const handleNavClick = (e, id) => {
-    e.preventDefault();
-    // if we're not on the home route, navigate there first
-    if (loc.pathname !== "/") {
-      navigate('/');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', `#${id}`);
-      }, 220);
-    } else {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.replaceState(null, '', `#${id}`);
-    }
-  };
 
   return (
     <nav className="site-nav">
@@ -35,10 +18,10 @@ export default function NavBar() {
         <Link to="/" className="site-title">Reise Young</Link>
 
         <div className="nav-links" role="navigation" aria-label="Primary">
-          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className={linkClass('about')}>About Me</a>
-          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className={linkClass('projects')}>Projects</a>
-          <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')} className={linkClass('skills')}>Skills</a>
-          <a href="#submit-message" onClick={(e) => handleNavClick(e, 'submit-message')} className={linkClass('submit-message')}>Contact</a>
+          <Link to="/about" className={linkClass("/about")} aria-current={path === "/about" ? "page" : undefined}>About Me</Link>
+          <Link to="/projects" className={linkClass("/projects")} aria-current={path === "/projects" ? "page" : undefined}>Projects</Link>
+          <Link to="/skills" className={linkClass("/skills")} aria-current={path === "/skills" ? "page" : undefined}>Skills</Link>
+          <Link to="/contact" className={linkClass("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Contact</Link>
         </div>
         
         {/* Resume button: opens resume in a new tab so users can preview or download */}
