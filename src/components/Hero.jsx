@@ -81,7 +81,7 @@ export default function Hero() {
             </div>
 
             <div className="contact-socials" aria-hidden="false">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+              <a href="https://www.instagram.com/reise.young/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.2"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
               </a>
               <a href="https://www.linkedin.com/in/reise-young" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
