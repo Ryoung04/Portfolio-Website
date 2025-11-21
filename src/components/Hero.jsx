@@ -168,7 +168,6 @@ function FormSpreeContact() {
       <div aria-live="polite" aria-atomic="true" tabIndex={-1} ref={statusRef} className="form-status">
         {status === 'success' && <div className="success-text" role="status">Thanks — your message was sent.</div>}
         {status === 'error' && <div className="error-text" role="alert">Sorry — we couldn't send your message. Try again later or email reiseyoung@gmail.com.</div>}
-        {!endpoint && status !== 'sending' && <div className="hint-text">Note: to send messages without opening your email client, set the environment variable <code>VITE_FORMSPREE_ENDPOINT</code> to your Formspree endpoint.</div>}
       </div>
     </div>
   );
