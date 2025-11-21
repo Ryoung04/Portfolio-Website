@@ -108,6 +108,49 @@ a:hover {
 .illustration { width: 360px; height: 320px; background: linear-gradient(180deg,#fff,#f3f4f6); border-radius: 12px; box-shadow: 0 8px 20px rgba(15,23,42,0.06); }
 .illustration-img { width: 360px; height: 320px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(15,23,42,0.06); }
 .profile-photo-hero { width: 360px; height: 360px; border-radius: 0; }
+
+/* Dark blurred background hero style */
+.hero {
+  position: relative;
+  padding: 5rem 0;
+  background: #000; /* fallback */
+  color: white;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/Reise_Mug.jpeg');
+  background-size: cover;
+  background-position: center right;
+  filter: blur(12px) brightness(0.25) grayscale(0.1);
+  transform: scale(1.06);
+  z-index: 0;
+}
+.hero-inner { position: relative; z-index: 5; }
+
+/* White card that holds the text */
+.hero-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #0f172a;
+  max-width: 720px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.12);
+}
+.hero-title { color: #0f172a; }
+.hero-sub { color: #334155; }
+
+/* Make hero-right image sit above the blurred background but under the white card */
+.hero-right { position: absolute; right: 6%; top: 50%; transform: translateY(-50%); z-index: 2; }
+.profile-photo-hero { width: 420px; height: 420px; }
+
+@media (max-width: 900px) {
+  .hero-right { position: static; transform: none; margin-top: 1.5rem; display:flex; justify-content:center; }
+  .profile-photo-hero { width: 260px; height: 260px; }
+  .hero-inner { flex-direction: column; align-items: flex-start; }
+}
 .hero-ctas { margin-top: 1.25rem; display:flex; gap:0.75rem; }
 .btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; }
 .btn.primary { background:#0f172a; color:#fff; }
