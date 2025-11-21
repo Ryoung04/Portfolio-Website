@@ -14,15 +14,18 @@ export default function Hero() {
             </p>
 
             <div className="hero-ctas">
-              <a href="/projects" className="btn primary">View Projects</a>
-              <a href="/contact" className="btn ghost">Contact Me</a>
+              <div className="cta-row">
+                <a href="/projects" className="btn primary">View Projects</a>
+              </div>
+
+              <div className="center-cta">
+                <a href="/contact" className="btn ghost">Contact Me</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="hero-right" aria-hidden="true">
-          <img src="/assets/Reise_Mug.jpeg" alt="Reise Young" className="illustration-img profile-photo-hero" />
-        </div>
+        {/* removed the profile image from the hero per request; space is provided by grid */}
       </div>
     </section>
   );
