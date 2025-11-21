@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
+// When opening the project modal we push a history entry so Back closes it.
+
 export default function Projects() {
   const projects = [
     {
@@ -28,10 +30,18 @@ export default function Projects() {
   const [selected, setSelected] = useState(null);
   const modalRef = useRef(null);
   const lastFocusedRef = useRef(null);
+  const lastPushedRef = useRef(false);
 
   function openProject(p) {
     lastFocusedRef.current = document.activeElement;
     setSelected(p);
+    // push a history entry so the browser back button will close the modal
+    try {
+      window.history.pushState({ modal: p.name }, '', '#project');
+      lastPushedRef.current = true;
+    } catch (err) {
+      lastPushedRef.current = false;
+    }
     const main = document.getElementById('main-content');
     if (main) main.setAttribute('aria-hidden', 'true');
   }
@@ -41,9 +51,25 @@ export default function Projects() {
     const main = document.getElementById('main-content');
     if (main) main.removeAttribute('aria-hidden');
     setTimeout(() => lastFocusedRef.current?.focus(), 0);
+    // if we pushed a history entry, go back so the URL/state is restored
+    if (lastPushedRef.current) {
+      window.history.back();
+      lastPushedRef.current = false;
+    }
   }
 
   useEffect(() => {
+    const onPop = (ev) => {
+      // if a popstate occurs and a modal is open, close it
+      if (selected) {
+        setSelected(null);
+        const main = document.getElementById('main-content');
+        if (main) main.removeAttribute('aria-hidden');
+        lastPushedRef.current = false;
+      }
+    };
+    window.addEventListener('popstate', onPop);
+
     function onKey(e) {
       if (e.key === 'Escape') {
         closeProject();
@@ -71,6 +97,7 @@ export default function Projects() {
     }
     return () => {
       document.removeEventListener('keydown', onKey);
+      window.removeEventListener('popstate', onPop);
       document.body.style.overflow = '';
     };
   }, [selected]);
