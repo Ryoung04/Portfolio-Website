@@ -2,7 +2,8 @@ import React from "react";
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-4xl mx-auto py-16 px-6">
+    <div className="page-bg">
+      <div className="max-w-4xl mx-auto py-16 px-6">
       <h1 className="text-4xl font-bold mb-6">Projects</h1>
 
       <section className="mb-8">
@@ -22,6 +23,7 @@ export default function ProjectsPage() {
       </section>
 
       <p className="text-sm text-gray-500">More projects and details coming soon. If you'd like specific links or images for a project, send them and I'll add gallery cards with screenshots and external links.</p>
+      </div>
     </div>
   );
 }

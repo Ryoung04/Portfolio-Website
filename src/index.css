@@ -309,3 +309,46 @@ input:focus, textarea:focus, button:focus {
   .hero-features-inner { grid-template-columns: 1fr; }
 }
 
+/* Full-page blurred background used on non-hero pages */
+.page-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
+}
+.page-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/bluredBackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(0.28) grayscale(0.06);
+  transform: scale(1.04);
+  z-index: 0;
+}
+.page-bg > * { position: relative; z-index: 2; }
+
+/* Force commonly-used text utility classes to be white when inside .page-bg */
+.page-bg .text-gray-700,
+.page-bg .text-gray-600,
+.page-bg .text-gray-500,
+.page-bg .text-gray-800,
+.page-bg .text-black,
+.page-bg p,
+.page-bg li,
+.page-bg span,
+.page-bg h1,
+.page-bg h2,
+.page-bg h3,
+.page-bg h4 {
+  color: rgba(255,255,255,0.96) !important;
+}
+
+.page-bg a { color: #dbeafe !important; text-decoration: underline; }
+.page-bg .inline-block { color: #dbeafe !important; }
+
+@media (max-width: 900px) {
+  .page-bg { padding-bottom: 4rem; }
+}
+

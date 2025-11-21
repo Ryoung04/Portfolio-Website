@@ -2,7 +2,8 @@ import React from "react";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-3xl mx-auto py-16 px-6">
+    <div className="page-bg">
+      <div className="max-w-3xl mx-auto py-16 px-6">
       <h1 className="text-4xl font-bold mb-6">Contact</h1>
 
       <p className="text-gray-700 mb-4">I'd love to hear from you. For recruiting, collaborations, or general inquiries you can reach me via email or on LinkedIn / GitHub.</p>
@@ -14,6 +15,7 @@ export default function ContactPage() {
       </div>
 
       <p className="mt-6 text-sm text-gray-500">If you'd like, I can add a contact form that emails you directly or integrate with Netlify / Formspree.</p>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,8 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <div className="max-w-5xl mx-auto py-16 px-6">
+    <div className="page-bg">
+      <div className="max-w-5xl mx-auto py-16 px-6">
       <h1 className="text-4xl font-bold mb-4">About Me</h1>
 
       <p className="text-lg text-gray-800 mb-4">
@@ -33,6 +34,7 @@ export default function AboutPage() {
           <li>Reviewed program schematics and proposed alternative, cost-effective plan modifications for customers.</li>
           <li>Analyzed customer usage patterns and assisted with troubleshooting and recommending plans that fit technical requirements.</li>
         </ul>
+      </div>
       </div>
     </div>
   );

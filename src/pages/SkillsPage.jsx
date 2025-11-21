@@ -2,7 +2,8 @@ import React from "react";
 
 export default function SkillsPage() {
   return (
-    <div className="max-w-4xl mx-auto py-16 px-6">
+    <div className="page-bg">
+      <div className="max-w-4xl mx-auto py-16 px-6">
       <h1 className="text-4xl font-bold mb-6">Skills</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -30,6 +31,7 @@ export default function SkillsPage() {
       <div className="mt-8">
         <h3 className="font-semibold mb-2">Certificates</h3>
         <p className="text-gray-700">Google Cybersecurity Professional Certificate — hands-on labs in SOC workflows, incident response, SIEM basics, Linux, SQL, and Python.</p>
+      </div>
       </div>
     </div>
   );
