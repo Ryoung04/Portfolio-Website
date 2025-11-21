@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
+    <>
     <section id="home" className="hero">
       <div className="hero-inner">
         <div className="hero-left">
@@ -24,18 +25,19 @@ export default function Hero() {
           <img src="/assets/Reise_Mug.jpeg" alt="Reise Young" className="illustration-img profile-photo-hero" />
         </div>
       </div>
+    </section>
 
-      {/* Features / boxes section below the hero content to add verticality */}
-      <div className="hero-features" aria-label="Highlights">
-        <div className="hero-features-inner">
-          <div className="hero-box">Experience</div>
-          <div className="hero-box">Projects</div>
-          <div className="hero-box">Skills</div>
-          <div className="hero-box">Research</div>
-          <div className="hero-box">Leadership</div>
-          <div className="hero-box">Contact</div>
-        </div>
+    {/* Features / boxes section below the hero content to add verticality (separate section) */}
+    <section className="features-section" aria-label="Highlights">
+      <div className="hero-features-inner">
+        <div className="hero-box">Experience</div>
+        <div className="hero-box">Projects</div>
+        <div className="hero-box">Skills</div>
+        <div className="hero-box">Research</div>
+        <div className="hero-box">Leadership</div>
+        <div className="hero-box">Contact</div>
       </div>
     </section>
+    </>
   );
 }
