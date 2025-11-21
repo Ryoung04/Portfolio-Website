@@ -228,3 +228,24 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Submit a message section styles (matches provided mock while staying on-site) */
+.submit-section {
+  padding: 6rem 8vw;
+  background: linear-gradient(180deg, rgba(6,10,15,0.96), rgba(6,10,15,0.96));
+  color: #e6eef6;
+}
+.submit-inner { max-width: 900px; margin: 0 auto; }
+.submit-title { font-size: 3rem; letter-spacing: 6px; text-align: center; margin: 0 0 2.5rem 0; color: #ffffff; }
+.submit-form { display: grid; gap: 1.1rem; }
+.submit-label { color: #cbd5e1; font-weight:700; letter-spacing: 1.8px; font-size: 0.9rem; margin-bottom: 0.25rem; }
+.submit-input { background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.25); padding: 0.6rem 0.25rem; color: #ffffff; font-size: 1rem; }
+.submit-input::placeholder { color: rgba(255,255,255,0.5); }
+.submit-input:focus { outline: none; border-bottom-color: rgba(255,255,255,0.6); }
+.submit-textarea { background: transparent; border: 2px solid rgba(255,255,255,0.18); padding: 1rem; color: #ffffff; font-size: 1rem; resize: vertical; min-height: 160px; }
+.submit-textarea:focus { outline: none; border-color: rgba(255,255,255,0.6); }
+
+@media (max-width: 900px) {
+  .submit-title { font-size: 2rem; }
+  .submit-section { padding: 4rem 6vw; }
+}
