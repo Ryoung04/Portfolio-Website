@@ -238,6 +238,12 @@ button:focus-visible {
 .submit-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 540px 1fr; gap: 3rem; align-items: start; }
 .submit-title { font-size: 3.6rem; letter-spacing: 8px; text-align: center; margin: 0 0 2.5rem 0; color: #ffffff; font-weight:700; grid-column: 1 / -1; }
 .submit-form { display: grid; gap: 1.15rem; grid-template-columns: 1fr; width: 100%; }
+
+/* Left/right columns inside the submit section */
+.submit-left { grid-column: 1; }
+.submit-right { grid-column: 2; display:flex; align-items:flex-start; justify-content:center; }
+.submit-logo { width: 100%; display:flex; align-items:center; justify-content:center; padding-left: 1rem; }
+.submit-logo img { max-width: 320px; width: 100%; height: auto; object-fit: contain; filter: saturate(0.95) brightness(0.98); opacity: 0.98; }
 .submit-label { color: rgba(255,255,255,0.82); font-weight:700; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 0.35rem; text-transform:uppercase; }
 .submit-input { background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.22); padding: 0.75rem 0.25rem; color: #ffffff; font-size: 1rem; width: 100%; }
 .submit-input::placeholder { color: rgba(255,255,255,0.45); }
@@ -253,6 +259,8 @@ button:focus-visible {
 @media (max-width: 900px) {
   .submit-title { font-size: 2.1rem; letter-spacing: 4px; }
   .submit-section { padding: 4rem 6vw; }
+  .submit-inner { grid-template-columns: 1fr; }
+  .submit-right { display:none; }
 }
 
 /* Accessibility + form visual helpers */

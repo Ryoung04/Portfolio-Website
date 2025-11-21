@@ -61,8 +61,17 @@ export default function Hero() {
       <div className="submit-inner">
         <h2 className="submit-title">SUBMIT A MESSAGE</h2>
 
-        {/* Accessible form with client-side validation and Formspree wiring (configure VITE_FORMSPREE_ENDPOINT) */}
-        <FormSpreeContact />
+        <div className="submit-left">
+          {/* Accessible form with client-side validation and Formspree wiring (configure VITE_FORMSPREE_ENDPOINT) */}
+          <FormSpreeContact />
+        </div>
+
+        <div className="submit-right" aria-hidden="true">
+          {/* Place your UCI logo at public/assets/uci_logo.png — if you upload it, it will appear here */}
+          <div className="submit-logo">
+            <img src="/assets/uci_logo.png" alt="University of California, Irvine logo" />
+          </div>
+        </div>
       </div>
     </section>
     </>
