@@ -19,7 +19,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-right" aria-hidden="true">
-          <img src="/assets/illustration.png" alt="Illustration" className="illustration-img" />
+          <img src="/assets/Reise_Mug.jpeg" alt="Reise Young" className="illustration-img profile-photo-hero" />
         </div>
       </div>
     </section>
