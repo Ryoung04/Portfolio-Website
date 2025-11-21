@@ -112,10 +112,13 @@ a:hover {
 /* Dark blurred background hero style */
 .hero {
   position: relative;
-  padding: 5rem 0;
+  padding: 3rem 0; /* reduce top/bottom padding so min-height controls spacing */
   background: #000; /* fallback */
   color: white;
   overflow: hidden;
+  min-height: 75vh; /* occupy ~3/4 of viewport height */
+  display: flex;
+  align-items: center; /* center hero-inner vertically */
 }
 .hero::before {
   content: "";
@@ -130,7 +133,7 @@ a:hover {
   transform: scale(1.06);
   z-index: 0;
 }
-.hero-inner { position: relative; z-index: 5; }
+.hero-inner { position: relative; z-index: 5; margin-top: 0; margin-bottom: 0; }
 
 /* White card that holds the text */
 .hero-card {
@@ -152,7 +155,7 @@ a:hover {
 @media (max-width: 900px) {
   .hero-right { position: static; transform: none; margin-top: 1.5rem; display:flex; justify-content:center; }
   .profile-photo-hero { width: 260px; height: 260px; }
-  .hero-inner { grid-template-columns: 1fr; align-items: flex-start; }
+  .hero-inner { grid-template-columns: 1fr; align-items: center; }
 }
 .hero-ctas { margin-top: 1.25rem; display:flex; gap:0.75rem; }
 .btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; }
