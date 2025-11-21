@@ -100,9 +100,9 @@ a:hover {
 
 /* Hero styles */
 .hero { background: #f8fafc; padding: 3rem 0; }
-.hero-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 2rem; align-items: center; padding: 0 1rem; }
-.hero-left { flex: 1 1 55%; }
-.hero-right { flex: 1 1 45%; display:flex; justify-content:center; }
+.hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 3rem; align-items: center; }
+.hero-left { display:block; }
+.hero-right { display:flex; justify-content:center; }
 .hero-title { font-size: 3.25rem; margin: 0 0 1rem 0; color: #0f172a; }
 .hero-sub { color: #334155; font-size: 1.125rem; max-width: 52ch; }
 .illustration { width: 360px; height: 320px; background: linear-gradient(180deg,#fff,#f3f4f6); border-radius: 12px; box-shadow: 0 8px 20px rgba(15,23,42,0.06); }
@@ -121,10 +121,12 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/assets/Reise_Mug.jpeg');
+  /* use the uploaded blurred background image */
+  background-image: url('/assets/bluredBackground.jpeg');
   background-size: cover;
-  background-position: center right;
-  filter: blur(12px) brightness(0.25) grayscale(0.1);
+  background-position: center center;
+  /* gentler blur so background detail shows through the white card gap */
+  filter: blur(6px) brightness(0.28) grayscale(0.06);
   transform: scale(1.06);
   z-index: 0;
 }
@@ -136,20 +138,21 @@ a:hover {
   padding: 2rem;
   border-radius: 12px;
   color: #0f172a;
-  max-width: 720px;
+  max-width: 640px; /* keep card narrower so there's visible space between card and profile photo */
   box-shadow: 0 12px 40px rgba(2,6,23,0.12);
+  position: relative;
+  z-index: 3;
 }
 .hero-title { color: #0f172a; }
 .hero-sub { color: #334155; }
 
-/* Make hero-right image sit above the blurred background but under the white card */
-.hero-right { position: absolute; right: 6%; top: 50%; transform: translateY(-50%); z-index: 2; }
-.profile-photo-hero { width: 420px; height: 420px; }
+.hero-right { position: static; z-index: 3; }
+.profile-photo-hero { width: 420px; height: 420px; border-radius: 8px; box-shadow: 0 12px 30px rgba(2,6,23,0.16); }
 
 @media (max-width: 900px) {
   .hero-right { position: static; transform: none; margin-top: 1.5rem; display:flex; justify-content:center; }
   .profile-photo-hero { width: 260px; height: 260px; }
-  .hero-inner { flex-direction: column; align-items: flex-start; }
+  .hero-inner { grid-template-columns: 1fr; align-items: flex-start; }
 }
 .hero-ctas { margin-top: 1.25rem; display:flex; gap:0.75rem; }
 .btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; }
