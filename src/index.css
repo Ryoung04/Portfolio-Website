@@ -246,8 +246,9 @@ button:focus-visible {
 .submit-textarea:focus { outline: none; border-color: rgba(255,255,255,0.66); box-shadow: 0 6px 24px rgba(2,6,23,0.35); }
 
 /* Larger spacing for message block and clearer box look */
-.submit-form > div { display: block; }
-.submit-form .submit-textarea { margin-top: 0.25rem; }
+.submit-form > div { display: flex; flex-direction: column; align-items: flex-start; }
+.submit-form .submit-textarea { margin-top: 0.25rem; width: 100%; box-sizing: border-box; }
+.submit-input { box-sizing: border-box; }
 
 @media (max-width: 900px) {
   .submit-title { font-size: 2.1rem; letter-spacing: 4px; }
