@@ -231,22 +231,26 @@ button:focus-visible {
 
 /* Submit a message section styles (matches provided mock while staying on-site) */
 .submit-section {
-  padding: 6rem 8vw;
-  background: linear-gradient(180deg, rgba(6,10,15,0.96), rgba(6,10,15,0.96));
+  padding: 6.5rem 8vw;
+  background: linear-gradient(180deg, rgba(8,10,12,0.92), rgba(8,10,12,0.92));
   color: #e6eef6;
 }
-.submit-inner { max-width: 900px; margin: 0 auto; }
-.submit-title { font-size: 3rem; letter-spacing: 6px; text-align: center; margin: 0 0 2.5rem 0; color: #ffffff; }
-.submit-form { display: grid; gap: 1.1rem; }
-.submit-label { color: #cbd5e1; font-weight:700; letter-spacing: 1.8px; font-size: 0.9rem; margin-bottom: 0.25rem; }
-.submit-input { background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.25); padding: 0.6rem 0.25rem; color: #ffffff; font-size: 1rem; }
-.submit-input::placeholder { color: rgba(255,255,255,0.5); }
-.submit-input:focus { outline: none; border-bottom-color: rgba(255,255,255,0.6); }
-.submit-textarea { background: transparent; border: 2px solid rgba(255,255,255,0.18); padding: 1rem; color: #ffffff; font-size: 1rem; resize: vertical; min-height: 160px; }
-.submit-textarea:focus { outline: none; border-color: rgba(255,255,255,0.6); }
+.submit-inner { max-width: 920px; margin: 0 auto; }
+.submit-title { font-size: 3.6rem; letter-spacing: 8px; text-align: center; margin: 0 0 2.5rem 0; color: #ffffff; font-weight:700; }
+.submit-form { display: grid; gap: 1.15rem; grid-template-columns: 1fr; }
+.submit-label { color: rgba(255,255,255,0.82); font-weight:700; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 0.35rem; text-transform:uppercase; }
+.submit-input { background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.22); padding: 0.75rem 0.25rem; color: #ffffff; font-size: 1rem; width: 100%; }
+.submit-input::placeholder { color: rgba(255,255,255,0.45); }
+.submit-input:focus { outline: none; border-bottom-color: rgba(255,255,255,0.66); }
+.submit-textarea { background: transparent; border: 3px solid rgba(255,255,255,0.16); padding: 1rem; color: #ffffff; font-size: 1rem; resize: vertical; min-height: 220px; border-radius: 6px; }
+.submit-textarea:focus { outline: none; border-color: rgba(255,255,255,0.66); box-shadow: 0 6px 24px rgba(2,6,23,0.35); }
+
+/* Larger spacing for message block and clearer box look */
+.submit-form > div { display: block; }
+.submit-form .submit-textarea { margin-top: 0.25rem; }
 
 @media (max-width: 900px) {
-  .submit-title { font-size: 2rem; }
+  .submit-title { font-size: 2.1rem; letter-spacing: 4px; }
   .submit-section { padding: 4rem 6vw; }
 }
 
