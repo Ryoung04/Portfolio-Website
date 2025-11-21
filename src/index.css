@@ -273,10 +273,10 @@ input:focus, textarea:focus, button:focus {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  /* fixed gap so spacing remains identical when resizing */
-  column-gap: 2.5rem;
-  row-gap: 2.5rem;
-  gap: 2.5rem;
+  /* larger fixed/clamped gap so horizontal spacing remains generous */
+  column-gap: clamp(2.5rem, 6vw, 4.5rem);
+  row-gap: clamp(2rem, 4vw, 3.5rem);
+  gap: clamp(2.25rem, 5vw, 4rem);
   align-items: stretch;
   justify-content: center;
   align-content: start;
