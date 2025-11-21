@@ -34,7 +34,7 @@ export default function Hero() {
               </p>
 
               <div className="hero-ctas">
-                <a href="/projects" className="btn primary">View Projects</a>
+                <Link to="/projects" className="btn primary">View Projects</Link>
                 <button onClick={scrollToContact} className="btn ghost">Contact Me</button>
               </div>
             </div>
