@@ -66,12 +66,33 @@ export default function Hero() {
           <FormSpreeContact />
         </div>
 
-        <div className="submit-right" aria-hidden="true">
-          {/* Place your UCI logo at public/assets/uci_logo.png — if you upload it, it will appear here */}
-          <div className="submit-logo">
-            <img src="/assets/uci_logo.png" alt="University of California, Irvine logo" />
+        <aside className="contact-details" aria-label="Contact details">
+          <div className="contact-inner">
+            <h3 className="contact-name">Reise Young</h3>
+
+            <div className="contact-item">
+              <span className="contact-label">PHONE</span>
+              <a href="tel:+19492883286" className="contact-value">(949) 288-3286</a>
+            </div>
+
+            <div className="contact-item">
+              <span className="contact-label">EMAIL</span>
+              <a href="mailto:reiseyoung@gmail.com" className="contact-value">reiseyoung@gmail.com</a>
+            </div>
+
+            <div className="contact-socials" aria-hidden="false">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.2"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/reise-young" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.2"/><path d="M8.8 11.5v6.5M8.8 8.5v.1M12.2 8.5v.1c1.8 0 2.8 1 2.8 2.6v4.4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+              <a href="https://github.com/Ryoung04" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.2"/><path d="M9 17c-3 1-4-1-4-1v-1c0-1 .4-1.6 1-2m7 4s-.2-1-.9-1.8c1.8-.2 3.7-.9 3.7-4 0-.9-.3-1.6-.8-2.1.1-.2.4-1-.1-2.1 0 0-.7-.2-2.3 1a7.9 7.9 0 0 0-4.2 0C8.3 6 7.6 6.2 7.6 6.2c-.5 1.1-.2 1.9-.1 2.1-.5.5-.8 1.2-.8 2.1 0 3.1 1.8 3.8 3.7 4-.6.5-.8 1.2-.9 1.8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            </div>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
     </>
