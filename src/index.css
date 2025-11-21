@@ -157,6 +157,20 @@ a:hover {
   .profile-photo-hero { width: 260px; height: 260px; }
   .hero-inner { grid-template-columns: 1fr; align-items: center; }
 }
+
+/* Features grid under the hero */
+.hero-features { position: relative; z-index: 2; padding: 3rem 1rem 6rem; background: transparent; }
+.hero-features-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem; justify-items: center; align-items: start; }
+.hero-box { width: 100%; max-width: 320px; min-height: 120px; background: rgba(255,255,255,0.06); color: #ffffff; display:flex; align-items:center; justify-content:center; font-weight:600; border-radius:12px; box-shadow: 0 8px 24px rgba(2,6,23,0.25); transition: transform 200ms ease, filter 200ms ease, background-color 200ms ease; filter: brightness(0.85); }
+.hero-box:hover { transform: translateY(-6px); filter: brightness(1.15); background: rgba(255,255,255,0.12); }
+
+@media (max-width: 1000px) {
+  .hero-features-inner { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .hero-features-inner { grid-template-columns: 1fr; }
+  .hero-box { max-width: 100%; }
+}
 .hero-ctas { margin-top: 1.25rem; display:flex; gap:0.75rem; }
 .btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; }
 .btn.primary { background:#0f172a; color:#fff; }

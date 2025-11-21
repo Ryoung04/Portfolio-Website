@@ -24,6 +24,18 @@ export default function Hero() {
           <img src="/assets/Reise_Mug.jpeg" alt="Reise Young" className="illustration-img profile-photo-hero" />
         </div>
       </div>
+
+      {/* Features / boxes section below the hero content to add verticality */}
+      <div className="hero-features" aria-label="Highlights">
+        <div className="hero-features-inner">
+          <div className="hero-box">Experience</div>
+          <div className="hero-box">Projects</div>
+          <div className="hero-box">Skills</div>
+          <div className="hero-box">Research</div>
+          <div className="hero-box">Leadership</div>
+          <div className="hero-box">Contact</div>
+        </div>
+      </div>
     </section>
   );
 }
