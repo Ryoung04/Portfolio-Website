@@ -79,6 +79,10 @@ export default function SkillsPage() {
                   <img className="skill-svg" src="/assets/icons/excel.svg" alt="Excel icon" />
                   <div className="skill-label">Excel</div>
                 </div>
+                <div className="skill-card brand-wordpress">
+                  <img className="skill-svg" src="/assets/icons/wordpress.svg" alt="WordPress icon" />
+                  <div className="skill-label">WordPress</div>
+                </div>
               </div>
             </div>
 

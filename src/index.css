@@ -474,6 +474,7 @@ input:focus, textarea:focus, button:focus {
 .brand-mysql { --brand: #00758F; }
 .brand-aws { --brand: #FF9900; }
 .brand-excel { --brand: #217346; }
+.brand-wordpress { --brand: #21759B; }
 
 /* Use brand color on hover for border and subtle glow */
 .skill-card { border-color: rgba(2,6,23,0.04); }
