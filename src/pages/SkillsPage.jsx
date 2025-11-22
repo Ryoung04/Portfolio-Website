@@ -12,27 +12,27 @@ export default function SkillsPage() {
               <h3 className="skills-heading">Programming Languages</h3>
               <div className="skills-grid">
                 <div className="skill-card brand-python">
-                  <img className="skill-svg" src="/assets/icons/python.svg" alt="Python icon" />
+                  <img className="skill-svg" src="/assets/icons/python.svg" alt="Python icon" draggable="false" />
                   <div className="skill-label">Python</div>
                 </div>
                 <div className="skill-card brand-java">
-                  <img className="skill-svg" src="/assets/icons/java.svg" alt="Java icon" />
+                  <img className="skill-svg" src="/assets/icons/java.svg" alt="Java icon" draggable="false" />
                   <div className="skill-label">Java</div>
                 </div>
                 <div className="skill-card brand-c">
-                  <img className="skill-svg" src="/assets/icons/c.svg" alt="C icon" />
+                  <img className="skill-svg" src="/assets/icons/c.svg" alt="C icon" draggable="false" />
                   <div className="skill-label">C</div>
                 </div>
                 <div className="skill-card brand-cpp">
-                  <img className="skill-svg" src="/assets/icons/cpp.svg" alt="C++ icon" />
+                  <img className="skill-svg" src="/assets/icons/cpp.svg" alt="C++ icon" draggable="false" />
                   <div className="skill-label">C++</div>
                 </div>
                 <div className="skill-card brand-javascript">
-                  <img className="skill-svg" src="/assets/icons/javascript.svg" alt="JavaScript icon" />
+                  <img className="skill-svg" src="/assets/icons/javascript.svg" alt="JavaScript icon" draggable="false" />
                   <div className="skill-label">JavaScript</div>
                 </div>
                 <div className="skill-card brand-css">
-                  <img className="skill-svg" src="/assets/icons/css.svg" alt="CSS icon" />
+                  <img className="skill-svg" src="/assets/icons/css.svg" alt="CSS icon" draggable="false" />
                   <div className="skill-label">CSS</div>
                 </div>
               </div>
@@ -42,15 +42,15 @@ export default function SkillsPage() {
               <h3 className="skills-heading">Frameworks & Libraries</h3>
               <div className="skills-grid">
                 <div className="skill-card brand-react">
-                  <img className="skill-svg" src="/assets/icons/react.svg" alt="React icon" />
+                  <img className="skill-svg" src="/assets/icons/react.svg" alt="React icon" draggable="false" />
                   <div className="skill-label">React</div>
                 </div>
                 <div className="skill-card brand-node">
-                  <img className="skill-svg" src="/assets/icons/node.svg" alt="Node icon" />
+                  <img className="skill-svg" src="/assets/icons/node.svg" alt="Node icon" draggable="false" />
                   <div className="skill-label">Node</div>
                 </div>
                 <div className="skill-card brand-vercel">
-                  <img className="skill-svg" src="/assets/icons/vercel.svg" alt="Vercel icon" />
+                  <img className="skill-svg" src="/assets/icons/vercel.svg" alt="Vercel icon" draggable="false" />
                   <div className="skill-label">Vercel</div>
                 </div>
               </div>
@@ -60,27 +60,27 @@ export default function SkillsPage() {
               <h3 className="skills-heading">Tools</h3>
               <div className="skills-grid">
                 <div className="skill-card brand-git">
-                  <img className="skill-svg" src="/assets/icons/git.svg" alt="Git icon" />
+                  <img className="skill-svg" src="/assets/icons/git.svg" alt="Git icon" draggable="false" />
                   <div className="skill-label">Git</div>
                 </div>
                 <div className="skill-card brand-sql">
-                  <img className="skill-svg" src="/assets/icons/sql.svg" alt="SQL icon" />
+                  <img className="skill-svg" src="/assets/icons/sql.svg" alt="SQL icon" draggable="false" />
                   <div className="skill-label">SQL</div>
                 </div>
                 <div className="skill-card brand-mysql">
-                  <img className="skill-svg" src="/assets/icons/mysql.svg" alt="MySQL icon" />
+                  <img className="skill-svg" src="/assets/icons/mysql.svg" alt="MySQL icon" draggable="false" />
                   <div className="skill-label">MySQL</div>
                 </div>
                 <div className="skill-card brand-aws">
-                  <img className="skill-svg" src="/assets/icons/aws.svg" alt="AWS icon" />
+                  <img className="skill-svg" src="/assets/icons/aws.svg" alt="AWS icon" draggable="false" />
                   <div className="skill-label">AWS</div>
                 </div>
                 <div className="skill-card brand-excel">
-                  <img className="skill-svg" src="/assets/icons/excel.svg" alt="Excel icon" />
+                  <img className="skill-svg" src="/assets/icons/excel.svg" alt="Excel icon" draggable="false" />
                   <div className="skill-label">Excel</div>
                 </div>
                 <div className="skill-card brand-wordpress">
-                  <img className="skill-svg" src="/assets/icons/wordpress.svg" alt="WordPress icon" />
+                  <img className="skill-svg" src="/assets/icons/wordpress.svg" alt="WordPress icon" draggable="false" />
                   <div className="skill-label">WordPress</div>
                 </div>
               </div>

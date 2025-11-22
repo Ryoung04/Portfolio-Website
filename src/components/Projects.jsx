@@ -116,7 +116,7 @@ export default function Projects() {
             onKeyDown={(e) => (e.key === 'Enter' ? openProject(p) : null)}
           >
             <div className="h-36 mb-4 rounded-md overflow-hidden bg-gray-800 flex items-center justify-center">
-              <img src={p.img} alt={p.name} className="h-20 w-auto" loading="lazy" />
+              <img src={p.img} alt={p.name} className="h-20 w-auto" loading="lazy" draggable="false" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-white">{p.name}</h3>
             <p className="text-gray-700 mb-2">{p.description}</p>
@@ -151,7 +151,7 @@ export default function Projects() {
             </button>
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full md:w-1/3 flex items-center justify-center bg-gray-800 rounded-md p-4">
-                <img src={selected.img} alt={selected.name} className="h-32 w-auto" loading="lazy" />
+                <img src={selected.img} alt={selected.name} className="h-32 w-auto" loading="lazy" draggable="false" />
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-2">{selected.name}</h3>

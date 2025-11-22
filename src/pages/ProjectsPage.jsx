@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         <aside className="page-side" aria-label="Project thumbnails">
           <div className="project-thumbs">
             <a href="https://github.com/Ryoung04" target="_blank" rel="noopener noreferrer" className="project-thumb" aria-label="View more projects on GitHub">
-              <img src="/assets/Reise_Mug.jpeg" alt="Project thumbnail placeholder" />
+              <img src="/assets/Reise_Mug.jpeg" alt="Project thumbnail placeholder" draggable="false" />
             </a>
             <div className="project-cta">
               <p className="text-sm text-gray-500">More projects live on my GitHub — check them out for complete source and demos.</p>
