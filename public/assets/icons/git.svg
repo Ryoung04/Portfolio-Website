@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <!-- Git diamond background -->
-  <path d="M128 0L256 128L128 256L0 128Z" fill="#F05032"/>
+  <!-- Git diamond background in black -->
+  <path d="M128 0L256 128L128 256L0 128Z" fill="#000000"/>
   
   <!-- Branch structure in white -->
   <!-- Main vertical line -->
-  <rect x="118" y="80" width="20" height="96" rx="10" fill="white"/>
+  <line x1="128" y1="70" x2="128" y2="186" stroke="white" stroke-width="12" stroke-linecap="round"/>
   
-  <!-- Top branch line (diagonal) -->
-  <rect x="155" y="70" width="20" height="70" rx="10" fill="white" transform="rotate(45 165 105)"/>
+  <!-- Top right branch line (diagonal) -->
+  <line x1="128" y1="100" x2="175" y2="80" stroke="white" stroke-width="12" stroke-linecap="round"/>
   
-  <!-- Top node (circle) -->
-  <circle cx="190" cy="105" r="20" fill="white"/>
+  <!-- Top right node (circle) -->
+  <circle cx="175" cy="80" r="18" fill="white"/>
   
   <!-- Middle node (circle) -->
-  <circle cx="128" cy="128" r="22" fill="white"/>
+  <circle cx="128" cy="128" r="20" fill="white"/>
   
   <!-- Bottom node (circle) -->
-  <circle cx="128" cy="190" r="20" fill="white"/>
+  <circle cx="128" cy="186" r="18" fill="white"/>
 </svg>
