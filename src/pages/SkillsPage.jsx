@@ -31,6 +31,10 @@ export default function SkillsPage() {
                   <img className="skill-svg" src="/assets/icons/javascript.svg" alt="JavaScript icon" />
                   <div className="skill-label">JavaScript</div>
                 </div>
+                <div className="skill-card brand-css">
+                  <img className="skill-svg" src="/assets/icons/css.svg" alt="CSS icon" />
+                  <div className="skill-label">CSS</div>
+                </div>
               </div>
             </div>
 
