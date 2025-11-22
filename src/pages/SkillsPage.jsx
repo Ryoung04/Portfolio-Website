@@ -114,11 +114,6 @@ export default function SkillsPage() {
               </div>
             </div>
           </section>
-
-          <div className="mt-8">
-            <h3 className="font-semibold mb-2">Certificates</h3>
-            <p className="text-gray-700">Google Cybersecurity Professional Certificate — hands-on labs in SOC workflows, incident response, SIEM basics, Linux, SQL, and Python.</p>
-          </div>
         </div>
         {/* right side reserved for charts or images */}
       </div>

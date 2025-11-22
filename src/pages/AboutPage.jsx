@@ -36,6 +36,11 @@ export default function AboutPage() {
               <li>Analyzed customer usage patterns and assisted with troubleshooting and recommending plans that fit technical requirements.</li>
             </ul>
           </div>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-2">Certificates</h2>
+          <div className="text-gray-700">
+            <strong>Google Cybersecurity Professional Certificate</strong> — hands-on labs in SOC workflows, incident response, SIEM basics, Linux, SQL, and Python.
+          </div>
         </div>
         {/* right side available for images: add <div className="page-side">...</div> when needed */}
       </div>
