@@ -23,9 +23,20 @@ export default function ProjectsPage() {
             <a className="inline-block mt-3 text-sm text-blue-600" href="#">View on GitHub →</a>
           </section>
 
-          <p className="text-sm text-gray-500">More projects and details coming soon. If you'd like specific links or images for a project, send them and I'll add gallery cards with screenshots and external links.</p>
+          
         </div>
         {/* right side available for project images or thumbnails */}
+        <aside className="page-side" aria-label="Project thumbnails">
+          <div className="project-thumbs">
+            <a href="https://github.com/Ryoung04" target="_blank" rel="noopener noreferrer" className="project-thumb" aria-label="View more projects on GitHub">
+              <img src="/assets/Reise_Mug.jpeg" alt="Project thumbnail placeholder" />
+            </a>
+            <div className="project-cta">
+              <p className="text-sm text-gray-500">More projects live on my GitHub — check them out for complete source and demos.</p>
+              <a className="btn primary" href="https://github.com/Ryoung04" target="_blank" rel="noopener noreferrer">View GitHub</a>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   );

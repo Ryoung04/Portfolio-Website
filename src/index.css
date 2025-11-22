@@ -33,6 +33,34 @@
   font-family: var(--font-sans);
 }
 
+/* Global font application: make sure the chosen fonts apply everywhere
+   - Use the sans variable for body and most UI
+   - Use the serif variable for display headings and large titles */
+html, body, #root {
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+/* Ensure all elements inherit the base font by default */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Headings & large display titles use the serif (Playfair Display) */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.submit-title {
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Form controls and interactive elements should inherit the text font */
+input, textarea, select, button, a {
+  font-family: inherit;
+}
+
 a {
   font-weight: 500;
   color: var(--accent);
@@ -171,20 +199,23 @@ a:hover {
   .profile-photo-hero { width: 260px; height: 260px; }
   .hero-inner { grid-template-columns: 1fr; align-items: flex-start; }
 }
-.hero-ctas { margin-top: 1.25rem; display:flex; gap:0.75rem; }
-.btn { display:inline-block; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; }
+.hero-ctas { margin-top: 1.25rem; display:flex; gap:2rem; }
+.btn { display:inline-block; padding:0.5rem 0.9rem; border-radius:10px; text-decoration:none; font-size:0.98rem; }
 .btn {
-  display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; font-weight:600; transition: all 180ms ease;
+  display:inline-flex; align-items:center; justify-content:center; gap:0.45rem; font-weight:600; transition: all 180ms ease;
 }
-.btn.primary { background: var(--accent); color: #fff; padding: 0.65rem 1.1rem; border-radius: 10px; }
-.btn.ghost { background: transparent; color: var(--text); border: 1px solid rgba(15,23,42,0.06); padding: 0.6rem 0.95rem; }
+.btn.primary { background: var(--accent); color: #fff; padding: 0.56rem 0.95rem; border-radius: 10px; }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid rgba(15,23,42,0.06); padding: 0.5rem 0.85rem; }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(2,6,23,0.06); }
 .btn:focus-visible { outline: 3px solid rgba(37,99,235,0.18); outline-offset: 3px; }
 .btn[disabled], .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* CTA layout adjustments: keep primary left, center the Contact button below */
-.hero-ctas { display:block; }
-.cta-row { display:flex; gap:0.75rem; }
+.cta-row { display:flex; gap:2rem; }
+
+/* Ensure CTAs have spacing even if parent layout changes; fallback for inline/inline-block children */
+.hero-ctas { display:flex; gap:2rem; flex-wrap:wrap; }
+.hero-ctas .btn + .btn { margin-left: 2rem; }
 .center-cta { width:100%; display:flex; justify-content:center; margin-top:0.75rem; }
 
 /* About page photo layout */
@@ -397,5 +428,17 @@ input:focus, textarea:focus, button:focus {
   .page-content { grid-template-columns: 1fr; gap: 1.25rem; }
   .page-content .page-text { grid-column: 1 / -1; }
   .page-content .page-side { grid-column: 1 / -1; }
+}
+
+/* Project thumbnail gallery in right column */
+.project-thumbs { display:flex; flex-direction:column; gap:1rem; align-items:center; }
+.project-thumb img { width: 280px; max-width: 100%; border-radius: 10px; box-shadow: 0 12px 30px rgba(2,6,23,0.12); display:block; }
+.project-cta { display:flex; flex-direction:column; gap:0.75rem; align-items:center; margin-top: 0.5rem; }
+.project-cta .text-sm { color: rgba(15,23,42,0.72); }
+.project-cta .btn.primary { padding: 0.45rem 0.85rem; font-size: 0.95rem; }
+
+@media (max-width: 900px) {
+  .project-thumbs { flex-direction:row; gap:0.75rem; justify-content:center; }
+  .project-thumb img { width: 160px; }
 }
 
