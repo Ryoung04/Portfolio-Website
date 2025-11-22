@@ -466,6 +466,7 @@ input:focus, textarea:focus, button:focus {
 .brand-cpp { --brand: #00599C; }
 .brand-javascript { --brand: #F7DF1E; }
 .brand-css { --brand: #1572B6; }
+.brand-html { --brand: #E34F26; }
 .brand-react { --brand: #61DAFB; }
 .brand-node { --brand: #339933; }
 .brand-vercel { --brand: #000000; }
