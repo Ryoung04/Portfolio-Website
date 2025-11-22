@@ -453,6 +453,41 @@ input:focus, textarea:focus, button:focus {
 .skill-icon { width: 56px; height: 56px; border-radius: 8px; background: linear-gradient(180deg, rgba(8,10,12,0.03), rgba(8,10,12,0.02)); display:flex; align-items:center; justify-content:center; font-weight:700; color: var(--accent); margin-bottom: 0.6rem; }
 .skill-label { font-size: 0.95rem; color: var(--text); }
 
+/* Enhanced skill card interactions */
+.skill-card { transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, border-color 220ms, background-color 220ms; }
+.skill-card:hover { transform: translateY(-8px); box-shadow: 0 26px 54px rgba(2,6,23,0.12); }
+.skill-card:focus-within { outline: 3px solid rgba(37,99,235,0.12); outline-offset: 4px; }
+.skill-label { font-weight: 600; margin-top: 0.15rem; }
+
+/* Brand color accents (approximate official colors) */
+.brand-python { --brand: #3776AB; }
+.brand-java { --brand: #007396; }
+.brand-c { --brand: #A8B9CC; }
+.brand-cpp { --brand: #00599C; }
+.brand-javascript { --brand: #F7DF1E; }
+.brand-react { --brand: #61DAFB; }
+.brand-node { --brand: #339933; }
+.brand-vercel { --brand: #000000; }
+.brand-git { --brand: #F05032; }
+.brand-sql { --brand: #4479A1; }
+.brand-mysql { --brand: #00758F; }
+.brand-aws { --brand: #FF9900; }
+.brand-excel { --brand: #217346; }
+
+/* Use brand color on hover for border and subtle glow */
+.skill-card { border-color: rgba(2,6,23,0.04); }
+.skill-card:hover { border-color: var(--brand); }
+.skill-card .skill-svg { box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
+.brand-vercel .skill-svg { background: transparent; }
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 1000px) {
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
 }
