@@ -74,7 +74,7 @@ export default function Hero() {
 
               <div className="contact-item">
                 <span className="contact-label">PHONE</span>
-                <a href="tel:+19492883286" className="contact-value">(949) 288-3286</a>
+                <a href="tel:+19498994011" className="contact-value">(949) 288-3286</a>
               </div>
 
               <div className="contact-item">
